@@ -187,6 +187,6 @@ function calcTinhTienCap(){
             }
         }
     }
-    document.getElementById("txtResultTinhTienCap").innerHTML = "<br> Mã Khách Hàng : "+MaKH+ "<br> Tổng phí cáp : "+TongPhiCap;
+    document.getElementById("txtResultTinhTienCap").innerHTML = "<br> Mã Khách Hàng : "+MaKH+ "<br> Tổng phí cáp : "+TongPhiCap+"$";
 }
 
