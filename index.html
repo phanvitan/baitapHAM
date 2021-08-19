@@ -158,24 +158,58 @@
 
 
 
-  <div class="col-6 py-5">
+  <div class="card" style="width: 50rem;" style="padding-bottom: 100px;">
+    <div class="card-header text-white bg-success text-center" style="font-size: x-large;">
+      TÍNH TIỀN CÁP
+    </div>
 
-    <select id="mySelect" onchange="myFunction()">
-      <option value="Audi">Audi</option>
-      <option value="BMW">BMW</option>
-      <option value="Mercedes">Mercedes</option>
-      <option value="Volvo">Volvo</option>
-    </select>
+    <div class="card-body">
+      <form>
+        <div>
+          <select id="SelectCustomer" onchange="eventSelect()"
+            style="height:45px; border-color: purple; border-radius:8px;">
+            <option value="0">Chọn loại khách hàng</option>
+            <option value="1">Nhà Dân</option>
+            <option value="2">Doanh Nghiệp</option>
+          </select>
 
-    <p id="demo"></p>
 
-    <script>
-      function myFunction() {
-        var x = document.getElementById("mySelect").value;
-        document.getElementById("demo").innerHTML = "You selected: " + x;
-      }
-    </script>
+          <input id="SoKetNoi" style="display:none; border-color: rgba(13, 36, 236, 0.815);" type="number"
+            class="col-2 my-3 bg-light form-control " placeholder="Số kết nối">
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-5">
+            <p>Mã Khách Hàng :</p>
+            <div class="form-group">
+              <input type="text" class="form-control" id="inputMaKH" placeholder="Điền Mã KH"
+                style="padding: 30px; border-color:blue;">
+            </div>
+          </div>
+          <div class="col-5">
+            <p>Số Kênh Cao Cấp :</p>
+            <div class="form-group">
+              <input type="text" class="form-control" id="inputSoKenh" placeholder="Số Kênh"
+                style="padding: 30px; border-color:blue;">
+            </div>
+          </div>
 
+        </div>
+
+        <button onclick="calcTinhTienCap();" type="button" class="btn btn-danger" id="btnTTC"
+          style="padding: 15px; border-radius:25px;">Tính tiền
+          cáp</button>
+        <br>
+        <br>
+
+        <p style="background-color: springgreen; width: 70%; border-radius: 20px;text-align:center; font-size: 1.5rem;padding: 10px;"
+          id="txtResultTinhTienCap">Xem tiền cáp tại đây !</p>
+
+      </form>
+      <br>
+      <br>
+      <br>
+    </div>
   </div>
 
 

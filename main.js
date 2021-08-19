@@ -118,8 +118,67 @@ if (TNChiuThue <= 60e+6) {
     console.log(new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(TaxFinal));
 }
 
-document.getElementById("txtResultTAX").innerHTML = "<br>Thuế TN Cá Nhân : "+TaxFinal;
+document.getElementById("txtResultTAX").innerHTML = "<br>Thuế TN Cá Nhân : "+new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(TaxFinal);
 }
 
 //******** BÀI 4 : TÍNH TIỀN CÁP *********
+
+var InNhaDan = 4.5;
+var DVNhaDan = 20.5;
+var PhiThueND = 7.5;
+
+var InCty = 15;
+var DVCty1 = 75;
+var DVCty2 = 5;
+var PhiThueCty = 50;
+
+
+var TongPhiCap = 0;
+
+function eventSelect(){
+    var customer = document.querySelector("#SelectCustomer").value;
+    console.log(customer);
+    if (customer == 0){
+        alert("Vui lòng chọn khách hàng");
+        return;
+    }else{
+        if (customer == 1) {
+            document.querySelector("#SoKetNoi").style.display = "none";
+        }else{
+            document.querySelector("#SoKetNoi").style.display = "";
+        }
+    }
+}
+
+function calcTinhTienCap(){
+    var MaKH = document.getElementById("inputMaKH").value;
+    console.log(MaKH);
+    var SoKetNoi = document.getElementById("SoKetNoi").value;
+    console.log(SoKetNoi);
+
+    var SoKenh = document.getElementById("inputSoKenh").value;
+    console.log(SoKenh);
+    var customer = document.querySelector("#SelectCustomer").value;
+    console.log(customer);
+    if (customer == 1) {
+    TongPhiCap = InNhaDan + DVNhaDan + (PhiThueND * SoKenh);
+    console.log(TongPhiCap);
+
+    }else{
+        if (customer == 0){
+            alert("Vui lòng chọn khách hàng");
+            return;
+            
+        }else{
+            if (SoKetNoi <= 10) {
+                TongPhiCap = InCty + DVCty1 + (PhiThueCty * SoKenh);
+                console.log(TongPhiCap);
+            }else{
+                TongPhiCap = InCty + DVCty1 + (SoKetNoi - 10) * DVCty2 + (PhiThueCty * SoKenh);
+                console.log(TongPhiCap);
+            }
+        }
+    }
+    document.getElementById("txtResultTinhTienCap").innerHTML = "<br> Mã Khách Hàng : "+MaKH+ "<br> Tổng phí cáp : "+TongPhiCap;
+}
 
