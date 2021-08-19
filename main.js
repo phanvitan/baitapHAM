@@ -21,18 +21,26 @@ function calcXetTuyen(){
     var DiemXet = Number(sum) - Number(DiemChuan);
     console.log(DiemXet);
 
-    if (Mon1 == 0 || Mon2 == 0 || Mon3 == 0) {
-        document.getElementById("txtResultXetTuyen").innerHTML = "<br>Tổng điểm của bạn : "+sum+ "<br> Bạn đã Trượt! Ôn thi lại bạn nhé! Mạnh mẽ lên!";
-    }else{
-        if (DiemXet >= 0) {
-            document.getElementById("txtResultXetTuyen").innerHTML = "<br>Tổng điểm của bạn : "+sum+ "<br>Bạn đã đậu ! Xin Chúc Mừng !!";
 
-        }else{
-            document.getElementById("txtResultXetTuyen").innerHTML = "<br>Tổng điểm của bạn : "+sum+ "<br> Bạn đã Trượt! Ôn thi lại bạn nhé! Mạnh mẽ lên!";
-        }
+ 
+if (Mon1 == "" || Mon2 == "" || Mon3 == "") {
+    alert("Vui lòng nhập điểm cho cả 3 môn")
+    return;
+}else{
+     if (Mon1 == 0 || Mon2 == 0 || Mon3 == 0) {
+    document.getElementById("txtResultXetTuyen").innerHTML = "<br>Tổng điểm của bạn : "+sum+ "<br> Bạn đã Trượt! Ôn thi lại bạn nhé! Mạnh mẽ lên!";
+    }else{
+    if (DiemXet >= 0) {
+        document.getElementById("txtResultXetTuyen").innerHTML = "<br>Tổng điểm của bạn : "+sum+ "<br>Bạn đã đậu ! Xin Chúc Mừng !!";
+
+    }else{
+        document.getElementById("txtResultXetTuyen").innerHTML = "<br>Tổng điểm của bạn : "+sum+ "<br> Bạn đã Trượt! Ôn thi lại bạn nhé! Mạnh mẽ lên!";
     }
 }
+}
+}
 
+    
 //******** BÀI 2 : TÍNH TIỀN ĐIỆN ***** */
 
 
